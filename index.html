@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte de visite</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="page">
+        <header>
+            <label for="accueil">
+                <h1 class="logo">FR</h1>
+            </label>
+
+            <nav>
+                <ul class="menu">
+                    <li><label class="menu-lien" for="accueil">Accueil</label></li>
+                    <li><label class="menu-lien" for="motivations">Motivations</label></li>
+                    <li><label class="menu-lien" for="profils">Profils</label></li>
+                    <li><label class="btn-contact" for="contact"><span>Contact</span></label></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <input type="radio" name="onglet" id="accueil" checked hidden>
+            <section class="accueil onglet">
+                <img class="avatar" src="images/code_img.png" alt="logo arrière plan">
+                <p class="avatar-txt">Code css utilisé</p>
+                <div class="presentation">
+                    <div class="presentation_content">
+                        <h1>Bienvenue sur ma page</h1>
+                        <p>HTML / CSS uniquement</p>
+                    </div>
+                </div>
+                <div class="btn_fun"><a href="#page" id="btn_fin" title="Petite animation">End this</a></div>
+            </section>
+
+            <input type="radio" name="onglet" id="motivations" hidden>
+            <section class="motivations onglet">
+
+                <input type="checkbox" id="m-un" hidden>
+                <input type="checkbox" id="m-deux" hidden>
+                <input type="checkbox" id="m-trois" hidden>
+
+                <div class="cable">
+                    <div class="chariot">
+                        <div class="tige">
+                            <label for="m-un">
+                                <div class="bulle bulle-un" title="Clique pour découvrir"><span>1</span></div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="chariot">
+                        <div class="tige">
+                            <label for="m-deux">
+                                <div class="bulle bulle-deux" title="Clique pour découvrir"><span>2</span></div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="chariot">
+                        <div class="tige">
+                            <label for="m-trois">
+                                <div class="bulle bulle-trois" title="Clique pour découvrir"><span>3</span></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="lst-motivations">
+                    <li><label for="m-un" class="motivation m-un">Pourquoi le développement informatique ?</label>
+                        <p><em>R</em>éactiver mes connaissances informatiques (formation universitaire en 2020).<br>
+                            <em>D</em>écouvrir le développement web à travers des projets concrets et collectifs.<br>
+                            <em>C</em>réer des solutions utiles pour les autres dans un secteur dynamique.</p>
+                    </li>
+
+                    <li><label for="m-deux" class="motivation m-deux">Pourquoi moi ?</label>
+                        <p><em>A</em>ppétence pour la résolution de problèmes et l'algorithmique.<br>
+                            <em>P</em>rêt à m'investir dans une formation intensive pour mon insertion pro.<br>
+                            <em>A</em>uto-formation en html-css et javascript (débutant), et page web de présentation réalisée.
+                        </p>
+                    </li>
+
+                    <li><label for="m-trois" class="motivation m-trois">Pourquoi Simplon ?</label>
+                        <p><em>D</em>onne sa chance aux personnes motivées en proposant une pédagogie pratique qui stimule la curiosité et
+                            l'émulation.<br>
+                            <em>P</em>ermet de bénéficier du réseau d'entreprises partenaires du Simplon.</p>
+                    </li>
+                </ul>
+
+            </section>
+
+            <input type="checkbox" id="profils" hidden>
+            <aside class="profils">
+                <label for="profils" class="fermer-profils">&times;</label>
+                <h2>Profils</h2>
+                <hr>
+                <ul class="liens">
+                    <li><a href="https://www.hackerrank.com/profile/FRay_account" target="_blank"><img
+                                src="images/hr_icone.png" alt="icone-HR" width="30" height="30">HackerRank</a></li>
+                    <li><a href="https://github.com/BrasureFroide" target="_blank"><img src="images/gh_icone.png"
+                                alt="icone-GH" width="30" height="30">Github</a></li>
+                </ul>
+            </aside>
+
+            <input type="checkbox" id="contact" hidden>
+            <div class="contact">
+                <label for="contact"></label>
+                <div class="modale">
+                    <h2>Flavien Raynard</h2>
+                    <p>
+                        <img src="images/phone.png" alt="icône tél" width="20" height="20">
+                        06 37 89 82 22
+                    </p>
+                    <p>
+                        <img src="images/map-pin.png" alt="icône tél" width="20" height="20">
+                        Grenoble (38)
+                    </p>
+                    <a class="mail" href="mailto:mail.ray.flavien@gmail.com">
+                        <img src="images/mail.png" alt="icône tél" width="20" height="20"></a>
+
+                </div>
+            </div>
+
+        </main>
+
+        <input type="radio" id="ferme-footer" hidden>
+        <footer>
+            More to come... I hope
+            <label for="ferme-footer">&times;</label>
+        </footer>
+    </div>
+
+    <div id="life">
+        <a href="#">
+            <div class="boule-flamme"></div>
+        </a>
+        <span>Revive me</span>
+    </div>
+
+</body>
+
+</html>

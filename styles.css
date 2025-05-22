@@ -1,0 +1,740 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: arial
+}
+
+body {
+  background: black
+}
+
+#page {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 32, 43, 0.8), rgba(0, 0, 0, 0.8)), url("images/space_man.jpg") center/cover no-repeat;
+  position: relative;
+  transition: 2s;
+  overflow-x: hidden
+}
+
+/***************************/
+/********** HEADER *********/
+/***************************/
+
+header {
+  padding: 30px;
+  height: 80px;
+  box-shadow: 0 1px 3px;
+  background: rgba(0, 32, 43, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+header label {
+  cursor: pointer;
+  color: white
+}
+
+/***** LOGO *****/
+
+.logo {
+  text-shadow: 0 0 10px white;
+  padding: 10px
+}
+
+
+.logo:hover {
+  animation: logo_survol 1s linear infinite
+}
+
+@keyframes logo_survol {
+  0% {
+    text-shadow: 0 0 10px white
+  }
+
+  50% {
+    text-shadow: 0 0 15px white, 0 0 10px #e29810
+  }
+
+  100% {
+    text-shadow: 0 0 10px white
+  }
+}
+
+/***** MENU *****/
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 50px
+}
+
+.menu-lien,
+.btn-contact {
+  display: block;
+  padding: 10px;
+  transition: .2s
+}
+
+.menu-lien::after {
+  content: "";
+  margin: 5px auto -7px auto;
+  display: block;
+  width: 0;
+  height: 2px;
+  background: red;
+  transition: .2s
+}
+
+.menu-lien:hover {
+  color: #fad48b
+}
+
+.menu-lien:hover::after {
+  width: 100%
+}
+
+.btn-contact {
+  border-radius: 30px;
+  box-shadow: 0 0 3px white;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden
+}
+
+.btn-contact:hover {
+  box-shadow: 0 0 10px white
+}
+
+.btn-contact::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background: #A65500;
+  top: 0;
+  left: 0;
+  border-radius: 30px;
+  transition: .2s
+}
+
+.btn-contact:hover::before {
+  width: 100%
+}
+
+.btn-contact span {
+  position: relative
+}
+
+/*************************/
+/********** MAIN *********/
+/*************************/
+
+/***** PROFILS *****/
+
+#profils:checked+.profils {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible
+}
+
+.profils {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: .2s;
+  height: 80%;
+  background: linear-gradient(#004E68, rgba(0, 0, 0));
+  position: absolute;
+  top: 80px;
+  right: 0;
+  box-shadow: 0 0 15px black;
+  padding: 30px;
+  transform: translateX(50%)
+}
+
+.fermer-profils {
+  position: absolute;
+  transition: .2s;
+  left: -10px;
+  top: -10px;
+  color: white;
+  box-shadow: 0 0 3px black;
+  font-size: 2em;
+  text-align: center;
+  width: 35px;
+  height: 35px;
+  background: #781300;
+  cursor: pointer
+}
+
+.profils h2 {
+  width: 100%;
+  text-align: center;
+  color: white;
+  transition: .2s;
+  cursor: default
+}
+
+.profils h2:hover {
+  color: red;
+  text-shadow: 1px 1px black
+}
+
+.profils hr {
+  width: 80%;
+  margin: 20px auto
+}
+
+.liens {
+  list-style: none
+}
+
+.liens a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 10px
+}
+
+.liens li {
+  transition: .2s;
+  border-radius: 5px
+}
+
+.liens li:hover {
+  transform: translateX(-10px);
+  box-shadow: 0 0 5px white
+}
+
+/***** CONTACT *****/
+
+#contact:checked+.contact {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible
+}
+
+.contact {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: .2s;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.contact label {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  cursor: pointer
+}
+
+.modale {
+  border-radius: 10px;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: url("images/lune.jpg") no-repeat center/cover;
+  box-shadow: 0 0 10px 5px rgb(212, 3, 97);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 70px 0 30px 0;
+  cursor: default
+}
+
+.modale p,
+.modale h2 {
+  display: flex;
+  align-items: center;
+  color: white;
+  transition: .2s;
+  text-shadow: 0 0 10px pink
+}
+
+.modale p:hover,
+.modale h2:hover {
+  color: pink;
+  text-shadow: 2px 2px black
+}
+
+.modale p img {
+  margin-right: 5px
+}
+
+.modale a {
+  padding: 10px 25px;
+  box-shadow: inset 0 0 30px blue;
+  border: 1px solid blue
+}
+
+.modale a:hover {
+  box-shadow: 0 0 5px white, inset 0 0 40px blue
+}
+
+.modale a:hover img {
+  transform: scale(1.2)
+}
+
+.modale a:active,
+.modale a:focus {
+  box-shadow: 0 0 5px white, inset 0 0 40px red
+}
+
+/***** ONGLETS *****/
+
+.accueil,
+.motivations {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  cursor: default;
+  transition: .2s
+}
+
+#accueil:checked+.accueil,
+#motivations:checked+.motivations {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible
+}
+
+/***** MOTIVATIONS *****/
+
+.motivations {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  top: 50px
+}
+
+/** cable **/
+
+.cable {
+  height: 20px;
+  width: 550px;
+  border: 1px solid;
+  border-radius: 10px;
+  background: repeating-linear-gradient(45deg, black 5%, grey 10%);
+  transform: rotate(10deg);
+  transform-origin: left;
+  box-shadow: 0 0 10px darkblue;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px
+}
+
+
+/** chariot **/
+
+.chariot {
+  width: 50px;
+  height: 100%;
+  background: black;
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5px;
+  position: relative
+}
+
+.tige {
+  width: 5px;
+  height: 200px;
+  background: repeating-linear-gradient(45deg, black 1%, grey 2%);
+  transform: rotate(-10deg);
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  z-index: -1;
+  box-shadow: 0 0 5px blue
+}
+
+.tige::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: black;
+  position: absolute;
+  bottom: 0
+}
+
+/** bulles **/
+
+.tige label {
+  cursor: pointer
+}
+
+.bulle {
+  font-size: 2em;
+  font-weight: bold;
+  box-shadow: 0 0 10px blue, inset 0 0 70px black;
+  background: white;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border-width: 1px 7px;
+  border-style: solid;
+  border-color: black darkblue black darkred;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 100%;
+  transform: translateX(-50%)
+}
+
+.bulle::after {
+  content: "";
+  width: 45%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  border-right: 10px solid darkblue;
+  border-left: 10px solid darkred
+}
+
+.bulle span {
+  border-radius: 50%;
+  padding: 5px 10px
+}
+
+.bulle-un:hover span,
+.bulle-deux:hover span,
+.bulle-trois:hover span {
+  color: red;
+  background: yellow;
+  box-shadow: 0 0 35px 20px yellow
+}
+
+#m-un:checked~.cable .bulle-un:hover span,
+#m-deux:checked~.cable .bulle-deux:hover span,
+#m-trois:checked~.cable .bulle-trois:hover span {
+  box-shadow: none;
+  background: white
+}
+
+#m-un:checked~.cable .bulle-un,
+#m-deux:checked~.cable .bulle-deux,
+#m-trois:checked~.cable .bulle-trois {
+  box-shadow: inset 0 0 10px yellow, 0 0 100px yellow;
+  color: red
+}
+
+/***** LISTE MOTIVATIONS *****/
+
+.lst-motivations {
+  list-style: none;
+  width: 600px;
+  box-shadow: 0 0 10px
+}
+
+.motivation {
+  box-shadow: 0 0 3px black;
+  padding: 20px;
+  display: block;
+  cursor: pointer;
+  font-weight: bold;
+  background: darkblue;
+  color: white
+}
+
+.motivation::after {
+  content: "";
+  display: block;
+  padding: 5px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(45deg);
+  float: right
+}
+
+.lst-motivations p {
+  display: none;
+  padding: 20px;
+  line-height: 1.5em;
+  box-shadow: 0 0 0 1px black, inset 0 0 5px red;
+  background: #004E68;
+  color: white
+}
+
+.lst-motivations p em {
+  color: magenta;
+  font-style: italic
+}
+
+.motivation:hover,
+#m-un:checked~.lst-motivations .m-un,
+#m-deux:checked~.lst-motivations .m-deux,
+#m-trois:checked~.lst-motivations .m-trois {
+  background: blue;
+  color: red
+}
+
+#m-un:checked~.lst-motivations .m-un::after,
+#m-deux:checked~.lst-motivations .m-deux::after,
+#m-trois:checked~.lst-motivations .m-trois::after {
+  transform: translateY(5px) rotate(-135deg);
+}
+
+#m-un:checked~.lst-motivations .m-un+p,
+#m-deux:checked~.lst-motivations .m-deux+p,
+#m-trois:checked~.lst-motivations .m-trois+p {
+  display: block
+}
+
+/***** ACCUEIL *****/
+
+.accueil {
+  display: grid;
+  width: 100%;
+  grid-template:
+    "avatar txt presentation" 400px
+    ". . presentation" 1fr
+    "btn . presentation" 200px / 400px 400px 1fr;
+  color: white
+}
+
+.avatar {
+  grid-area: avatar;
+  border-bottom-right-radius: 100%;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 2px 5px red;
+  transition: .5s
+}
+
+.avatar:hover {
+  width: 400px;
+  height: 400px
+}
+
+.avatar-txt {
+  grid-area: txt;
+  opacity: 0;
+  transition: .5s;
+  margin-top: 50px;
+  font-style: italic
+}
+
+.avatar:hover+.avatar-txt {
+  opacity: 1;
+  margin-left: 25px
+}
+
+.presentation {
+  grid-area: presentation;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+
+.presentation_content {
+  margin-bottom: 150px
+}
+
+.presentation h1 {
+  font-size: 3em;
+  padding: 15px;
+  transition: .5s
+}
+
+.presentation p {
+  color: blue;
+  font-style: italic;
+  opacity: 0;
+  transition: .5s;
+  text-align: right;
+  transform: translateX(-60px)
+}
+
+.presentation h1:hover {
+  margin-right: 40px
+}
+
+.presentation h1:hover+p {
+  opacity: 1
+}
+
+.btn_fun {
+  grid-area: btn;
+  display: flex;
+  align-items: center
+}
+
+#btn_fin {
+  padding: 10px 20px;
+  border: 1px solid red;
+  background: black;
+  text-decoration: none;
+  border-radius: 10px;
+  color: red;
+  margin-left: 30px;
+  transition: .2s
+}
+
+#btn_fin:hover {
+  color: grey;
+  box-shadow: 0 5px darkred;
+  transform: translateY(-5px)
+}
+
+#btn_fin:active {
+  transform: translateY(0);
+  box-shadow: 0 0 10px red;
+  color: red
+}
+
+/***************************/
+/********** FOOTER *********/
+/***************************/
+
+#ferme-footer:checked+footer {
+  bottom: 40px;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden
+}
+
+footer {
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  font-style: italic;
+  color: white;
+  letter-spacing: 1px;
+  background: #450B00;
+  box-shadow: 0 0 10px red;
+  width: 90%;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  cursor: default;
+  transition: .6s
+}
+
+footer label {
+  position: absolute;
+  transition: .2s;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  box-shadow: 0 0 10px #fad48b, inset 0 0 10px black;
+  cursor: pointer;
+  right: -10px;
+  bottom: 50%;
+  transform: translateY(50%);
+  font-size: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+footer label:hover {
+  background: red;
+  width: 80px;
+  height: 80px;
+  color: black
+}
+
+/********** ANIMATION PHOENIX *********/
+
+#life {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-25%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: 2s
+}
+
+.boule-flamme {
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px 5px red, 0 0 50px 50px red;
+  width: 50px;
+  height: 50px;
+  border: 2px solid red;
+  background: rgb(255, 165, 0);
+  transform: rotate(-45deg);
+  transition: 1s
+}
+
+#page:target~#life {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transition-delay: 1.4s
+}
+
+#page:target~#life .boule-flamme {
+  border-radius: 50% 0 50% 50%;
+  transform: scaleY(1.3) rotate(-45deg);
+  box-shadow: inset 0 0 10px 5px red, 6px 1px 3px orange, -6px -4px 3px red, 6px -5px 3px red,
+    -8px -10px 3px orange;
+
+  animation: flamme 1s linear infinite;
+  transition-delay: 2s
+}
+
+@keyframes flamme {
+  50% {
+    transform: translateY(2.5px) scaleY(1.2) rotate(-45deg)
+  }
+}
+
+#page:target {
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  background: red;
+  box-shadow: 0 0 200px 100px red
+}
+
+#life span {
+  position: relative;
+  padding: 5px 10px;
+  transition: .2s;
+  border-radius: 0 20px 20px 0;
+  left: 70px;
+  bottom: 70px;
+  opacity: 0;
+  box-shadow: inset 0 0 10px red;
+  color: white;
+  transition: .2s
+}
+
+#life a:hover+span {
+  opacity: 1
+}
+
+#life span::before {
+  color: red;
+  content: "";
+  position: absolute;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-right: 10px solid;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%)
+}
